@@ -68,7 +68,7 @@ function scrape(uri){
             .on("end_parsed",function(jsonArrayObj){ //when parse finished, result will be emitted here.
                 jsonArrayObj.map(function(i){
                     return i.city;
-                }).slice(0,10).forEach(function(j,n){
+                }).forEach(function(j,n){
                     setTimeout(function(){
                         start( buildUrl(keyword,j), j );
                     },n*throttle);
